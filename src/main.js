@@ -186,7 +186,6 @@ const overviewMap = new Map({
   basemap: "topo-vector"
 });
 
-// 2. A pridaj samostatný view
 const overviewView = new MapView({
   container: "overviewDiv",
   map: overviewMap,
