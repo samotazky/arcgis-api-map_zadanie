@@ -1,0 +1,104 @@
+@import "https://js.arcgis.com/calcite-components/3.0.3/calcite.css";
+@import "https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/light/main.css";
+@import "https://js.arcgis.com/map-components/4.32/arcgis-map-components.css";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+  color: var(--text-color);
+}
+
+:root {
+  --text-color: #262626;
+  --hover-background: #dadada;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#scaleBar {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+#legend {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  max-height: 150px;
+  max-width: 50%;
+  overflow-y: scroll;
+}
+
+#viewDiv {
+    flex-grow: 1; 
+    transition: flex-grow 0.5s ease;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#overviewDiv {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#extentDiv {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 10;
+}
+
+.poly-container {
+  position: absolute;
+  top: 120px;
+  left: 15px;
+  z-index: 10;
+}
+
+.poly-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.poly-btns > button {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 0px 10px 0px;
+}
+
+.poly-btns > button:hover {
+  background: var(--hover-background);
+}
+
+@media screen and (max-width: 656px) {
+  #legend {
+    bottom: 50px;
+    left: 30px;
+    transform: none;
+    width: 25%;
+  }
+}
